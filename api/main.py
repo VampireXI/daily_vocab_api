@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from app.schemas import WordResponse
 from fastapi import HTTPException
-from app.routers import words
+from app.routers import words,practice
+from fastapi.middleware.cors import CORSMiddleware
+from app.database import Base,engine
 # Initialize FastAPI app
 app = FastAPI(
     title="Vocabulary Practice API",
