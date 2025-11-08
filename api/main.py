@@ -19,6 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(words.router, prefix="/api", tags=["words"])
+app.include_router(practice.router,prefix='/api',tags=['practice'])
 # @app.get("/api/word", response_model=WordResponse)
 # def get_random_word():
 #     """Get a random word"""
