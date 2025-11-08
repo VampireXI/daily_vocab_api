@@ -11,6 +11,13 @@ app = FastAPI(
     description="API for vocabulary practice and learning"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(words.router, prefix="/api", tags=["words"])
 # @app.get("/api/word", response_model=WordResponse)
 # def get_random_word():
